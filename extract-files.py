@@ -103,8 +103,6 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libprocessgroup_shim.so'),
     'vendor/lib64/libcamximageformatutils.so': blob_fixup()
         .replace_needed('vendor.qti.hardware.display.config-V2-ndk_platform.so', 'vendor.qti.hardware.display.config-V2-ndk.so'),
-    'vendor/lib64/libkaraokepal.so': blob_fixup()
-        .replace_needed('audio.primary.parrot.so', 'audio.primary.garnet.so'),
     'vendor/lib64/nfc_nci.nqx.default.hw.v1.so': blob_fixup()
         .add_needed('libbase_shim.so'),             
     'vendor/lib64/vendor.libdpmframework.so': blob_fixup()

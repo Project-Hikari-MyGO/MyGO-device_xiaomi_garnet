@@ -94,7 +94,12 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/etc/perf/commonresourceconfigs.xml': blob_fixup()
         .regex_replace('.+<Minor OpcodeValue="0x16" Node="/sys/devices/system/cpu/bus_dcvs/L3/soc:qcom,memlat:l3:prime/min_freq" />+\n', '')
         .regex_replace('.+<Minor OpcodeValue="0x12" Node="/sys/devices/system/cpu/bus_dcvs/LLCC/190b6400.qcom,bwmon-llcc/max_freq" />+\n', '')
-        .regex_replace('.+<Minor OpcodeValue="0x11" Node="/sys/devices/system/cpu/bus_dcvs/LLCC/190b6400.qcom,bwmon-llcc/min_freq" />+\n', ''),    
+        .regex_replace('.+<Minor OpcodeValue="0x11" Node="/sys/devices/system/cpu/bus_dcvs/LLCC/190b6400.qcom,bwmon-llcc/min_freq" />+\n', ''),
+    ('vendor/lib64/hw/audio.primary.garnet.so'): blob_fixup()
+        .patchelf_version('0_17_2')
+        .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),
+    ('vendor/lib64/hw/camera.qcom.so', 'vendor/lib64/hw/com.qti.chi.override.so', 'vendor/lib64/libcamxcommonutils.so', 'vendor/lib64/libmialgoengine.so'): blob_fixup()
+        .add_needed('libprocessgroup_shim.so'),
     'vendor/lib64/libcamximageformatutils.so': blob_fixup()
         .replace_needed('vendor.qti.hardware.display.config-V2-ndk_platform.so', 'vendor.qti.hardware.display.config-V2-ndk.so'),
     ('vendor/lib64/libqcrilNr.so', 'vendor/lib64/libril-db.so'): blob_fixup()

@@ -50,8 +50,7 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.3-impl
 
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.AGMIPC@1.0-service \
-    vendor.qti.hardware.pal@1.0-impl
+    vendor.qti.hardware.AGMIPC@1.0-service
 
 PRODUCT_PACKAGES += \
     audioadsprpcd \

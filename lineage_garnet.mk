@@ -14,7 +14,7 @@ TARGET_SUPPORTS_OMX_SERVICE := false
 $(call inherit-product, vendor/lineage/config/common_full_go_phone.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 CUSTOM_LOCALES := in_ID
-$(call inherit-product, vendor/bliss-priv/keys/keys.mk)
+# $(call inherit-product, vendor/bliss-priv/keys/keys.mk)
 TARGET_HAS_UDFPS := true
 EXTRA_UDFPS_ANIMATIONS := true
 

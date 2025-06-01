@@ -1075,4 +1075,7 @@
         <item>10</item>
         <item>10</item>
     </integer-array>
+
+    <!-- Enable Zram writeback feature to allow unused pages in zram be written to flash. -->Add commentMore actions
+    <bool name="config_zramWriteback">true</bool>
 </resources>
